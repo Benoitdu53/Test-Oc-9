@@ -33,4 +33,4 @@ addons:
   sonarcloud:
     organization: "benoitdu53"
     token:
-      secure: travis encrypt 03e8fc18133d3055fe05af0a36d2b47cfbce275b
+      secure: 03e8fc18133d3055fe05af0a36d2b47cfbce275b
