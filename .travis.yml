@@ -33,4 +33,4 @@ addons:
   sonarcloud:
     organization: "benoitdu53"
     token:
-      secure: 03e8fc18133d3055fe05af0a36d2b47cfbce275b
+      secure: 2a6f7c767aafe40266c378777ae4b8dad9e97fb9
