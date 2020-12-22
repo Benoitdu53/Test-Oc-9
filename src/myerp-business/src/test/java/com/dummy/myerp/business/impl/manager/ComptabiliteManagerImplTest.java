@@ -126,7 +126,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test(expected = FunctionalException.class)
-    public void shouldReturnException_whenEcritureComptableUnitHasOneLineRG3() throws Exception {
+    public void whenEcritureComptableUnitHasOneLineRG3_shouldReturnException() throws Exception {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -137,7 +137,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test(expected = FunctionalException.class)
-    public void shouldReturnException_whenEcritureComptableUnitHasNoCreditRG3() throws Exception {
+    public void whenEcritureComptableUnitHasNoCreditRG3_shouldReturnException() throws Exception {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -162,7 +162,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test(expected = FunctionalException.class)
-    public void shouldReturnException_whenYearNotMatchRG5() throws Exception{
+    public void whenYearNotMatchRG5_shouldReturnException() throws Exception{
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -172,7 +172,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test
-    public void shouldReturnException_whenJournalCodeNotMatchRG5(){
+    public void whenJournalCodeNotMatchRG5_shouldReturnException(){
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -235,7 +235,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test
-    public void shouldReturnFunctionalException_whenEcritureComptableIdIsDifferentFromDbRG6() throws NotFoundException {
+    public void whenEcritureComptableIdIsDifferentFromDbRG6_shouldReturnFunctionalException() throws NotFoundException {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -256,7 +256,7 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test
-    public void shouldNotReturnFunctionalException_whenEcritureComptableIdIsSameFromDbRG6() throws NotFoundException, FunctionalException {
+    public void whenEcritureComptableIdIsSameFromDbRG6_shouldNotReturnFunctionalException_() throws NotFoundException, FunctionalException {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
@@ -269,13 +269,13 @@ public class ComptabiliteManagerImplTest {
     }
 
     @Test
-    public void shouldNotReturnFunctionalException_whenEcritureComptableNotFoundInDb() throws NotFoundException, FunctionalException {
+    public void whenEcritureComptableNotFoundInDb_shouldNotReturnFunctionalException() throws NotFoundException, FunctionalException {
         lenient().when(comptabiliteDao.getEcritureComptableByRef(anyString())).thenThrow(NotFoundException.class);
         manager.checkEcritureComptableContext(vEcritureComptable);
     }
 
     @Test
-    public void shouldNotReturnFunctionalException_whenCheckEcritureComptable() throws NotFoundException, FunctionalException {
+    public void whenCheckEcritureComptable_shouldNotReturnFunctionalException() throws NotFoundException, FunctionalException {
         vEcritureComptable.setId(1);
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
