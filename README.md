@@ -1,7 +1,5 @@
 # MyERP
 [![Build Status](https://travis-ci.org/github/Benoitdu53/Test-Oc-9.svg?branch=master)](https://travis-ci.com/Benoitdu53/Test-Oc-9)
-#[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Benoitdu53_Test-Oc-9&metric=alert_status)](https://sonarcloud.io/dashboard?id=Benoitdu53_Test-Oc-9)
-#[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Benoitdu53_Test-Oc-9&metric=coverage)](https://sonarcloud.io/dashboard?id=Benoitdu53_Test-Oc-9)
 ## Organisation du répertoire
 
 *   `doc` : documentation
