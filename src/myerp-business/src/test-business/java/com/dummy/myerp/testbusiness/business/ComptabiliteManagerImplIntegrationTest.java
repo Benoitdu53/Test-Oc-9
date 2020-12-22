@@ -100,7 +100,7 @@ public class ComptabiliteManagerImplIntegrationTest extends BusinessTestCase {
     }
 
     @Test(expected = FunctionalException.class)
-    public void checkInsertEcritureComptableShouldReturnException() throws FunctionalException {
+    public void checkInsertEcritureComptable_shouldReturnException() throws FunctionalException {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
         String date = "2016-12-29";
@@ -124,7 +124,7 @@ public class ComptabiliteManagerImplIntegrationTest extends BusinessTestCase {
     }
 
     @Test
-    public void checkUpdateEcritureComptableReturnNoError() throws FunctionalException {
+    public void checkUpdateEcritureComptable_shouldNoError() throws FunctionalException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd");
         String date = "2016-12-30";
 
@@ -171,7 +171,7 @@ public class ComptabiliteManagerImplIntegrationTest extends BusinessTestCase {
     }
 
     @Test(expected = FunctionalException.class)
-    public void checkUpdateEcritureComptableShouldReturnException() throws FunctionalException {
+    public void checkUpdateEcritureComptable_shouldReturnException() throws FunctionalException {
         EcritureComptable vEcritureComptable = new EcritureComptable();
         vEcritureComptable.setId(-1);
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
@@ -189,7 +189,7 @@ public class ComptabiliteManagerImplIntegrationTest extends BusinessTestCase {
     }
 
     @Test
-    public void checkDeleteEcritureComptableShouldReturnNoError() {
+    public void checkDeleteEcritureComptable_shouldReturnNoError() {
         Integer pId = 1;
         comptabiliteManager.deleteEcritureComptable(pId);
 

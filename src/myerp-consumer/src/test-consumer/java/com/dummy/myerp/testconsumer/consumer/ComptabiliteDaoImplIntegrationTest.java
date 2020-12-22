@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
 
     @Test
-    public void getListCompteComptableShouldReturnList() {
+    public void getListCompteComptable_shouldReturnList() {
 
         List<CompteComptable> compteComptableList = getDaoProxy().getComptabiliteDao().getListCompteComptable();
         assertThat(compteComptableList).isNotEmpty();
@@ -25,21 +25,21 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test
-    public void getListJournalComptableShouldReturnList() {
+    public void getListJournalComptable_shouldReturnList() {
         List<JournalComptable> journalComptableList = getDaoProxy().getComptabiliteDao().getListJournalComptable();
         assertThat(journalComptableList).isNotEmpty();
 
     }
 
     @Test
-    public void getListEcritureComptableShouldReturnList() {
+    public void getListEcritureComptable_shouldReturnList() {
         List<EcritureComptable> ecritureComptableList = getDaoProxy().getComptabiliteDao().getListEcritureComptable();
         assertThat(ecritureComptableList).isNotEmpty();
 
     }
 
     @Test
-    public void getEcritureComptableShouldReturnEcritureComptable() throws NotFoundException {
+    public void getEcritureComptable_shouldReturnEcritureComptable() throws NotFoundException {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateStringTest = "2016-12-30";
 
@@ -58,13 +58,13 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test(expected = NotFoundException.class)
-    public void getEcritureComptableByIdShouldReturnException() throws NotFoundException {
+    public void getEcritureComptableById_shouldReturnException() throws NotFoundException {
         getDaoProxy().getComptabiliteDao().getEcritureComptable(-10);
     }
 
 
     @Test
-    public void getEcritureComptableByRefShouldReturnEcritureComptable() throws NotFoundException {
+    public void getEcritureComptableByRef_shouldReturnEcritureComptable() throws NotFoundException {
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateStringTest = "2016-12-30";
@@ -84,12 +84,12 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test(expected = NotFoundException.class)
-    public void getEcritureComptableByReferenceShouldReturnException() throws NotFoundException {
+    public void getEcritureComptableByReference_shouldReturnException() throws NotFoundException {
         getDaoProxy().getComptabiliteDao().getEcritureComptableByRef("VE-2016/00010");
     }
 
     @Test
-    public void loadListLigneEcriture() throws NotFoundException {
+    public void getListLigneEcriture() throws NotFoundException {
         EcritureComptable ecritureComptable = getDaoProxy().getComptabiliteDao().getEcritureComptable(-3);
         getDaoProxy().getComptabiliteDao().loadListLigneEcriture(ecritureComptable);
         assertThat(ecritureComptable.getListLigneEcriture().get(0).getCompteComptable().getNumero()).isEqualTo(401);
@@ -97,7 +97,7 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test
-    public void insertEcritureComptable() {
+    public void addEcritureComptable() {
 
         List<EcritureComptable> listEcritureComptable = getDaoProxy().getComptabiliteDao().getListEcritureComptable();
         EcritureComptable ecritureComptable = listEcritureComptable.get(listEcritureComptable.size() - 1);
@@ -144,20 +144,20 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test
-    public void getListSequenceEcritureComptableShouldReturnList(){
+    public void getListSequenceEcritureComptable_shouldReturnList(){
         List<SequenceEcritureComptable> sequenceEcritureComptableList = getDaoProxy().getComptabiliteDao().getListSequenceEcritureComptable();
         assertThat(sequenceEcritureComptableList).isNotEmpty();
     }
 
     @Test
-    public void getLastSequenceEcritureComptableShouldReturnLastSequence() throws NotFoundException {
+    public void getLastSequenceEcritureComptable_shouldReturnLastSequence() throws NotFoundException {
         SequenceEcritureComptable lastSequence = getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable("BQ", 2016);
         assertThat(lastSequence).isNotNull();
         assertThat(lastSequence.getDerniereValeur()).isEqualTo(51);
     }
 
     @Test
-    public void insertSequenceEcritureComptableShouldReturnSequence(){
+    public void addSequenceEcritureComptable_shouldReturnSequence(){
         int sizeInit = getDaoProxy().getComptabiliteDao().getListSequenceEcritureComptable().size();
         SequenceEcritureComptable sequenceEcritureComptable = new SequenceEcritureComptable();
         sequenceEcritureComptable.setJournalCode("TE");
@@ -169,7 +169,7 @@ public class ComptabiliteDaoImplIntegrationTest extends ConsumerTestCase {
     }
 
     @Test
-    public void updateSequenceEcritureComptableShouldReturnSequence() throws NotFoundException {
+    public void updateSequenceEcritureComptable_shouldReturnSequence() throws NotFoundException {
         SequenceEcritureComptable sequenceInDb = getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable("TE", 2020);
         SequenceEcritureComptable sequenceEcritureComptable = new SequenceEcritureComptable("TE", 2020, 150);
         getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(sequenceEcritureComptable);
