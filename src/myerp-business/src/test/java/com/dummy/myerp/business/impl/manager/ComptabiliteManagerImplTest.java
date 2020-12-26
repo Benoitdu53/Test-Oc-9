@@ -150,9 +150,9 @@ public class ComptabiliteManagerImplTest {
         manager.regleGestion3(vEcritureComptable);
     }
 
-    //test regex
+
     @Test(expected = FunctionalException.class)
-    public void checkEcritureComptableUnitRG5_whenSequenceTooLong() throws Exception{
+    public void checkEcritureComptableUnitRG5_whenSequenceTooLong_shouldReturnException() throws Exception{
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
