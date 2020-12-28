@@ -171,7 +171,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         // ===== RG_Compta_3 : une écriture comptable doit avoir au moins 2 lignes d'écriture (1 au débit, 1 au crédit)
         regleGestion3(pEcritureComptable);
 
-        // ===== RG_Compta_5 : La référence d'une écriture comptable est composée du code du journal dans lequel
+        // ===== RG_Compta_5 : La référence d'une écriture comptable est composée du code du journal
         regleGestion5(pEcritureComptable);
     }
 
