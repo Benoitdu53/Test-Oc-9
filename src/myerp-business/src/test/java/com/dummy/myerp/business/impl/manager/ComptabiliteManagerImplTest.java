@@ -242,7 +242,7 @@ public class ComptabiliteManagerImplTest {
         vEcritureComptable.setReference("AC-2020/00001");
         vEcritureComptable.setId(1);
         EcritureComptable returnedEcritureComptable = new EcritureComptable();
-        returnedEcritureComptable.setId(vEcritureComptable.getId() + 1); // not the same id !!
+        returnedEcritureComptable.setId(vEcritureComptable.getId() + 1); // Pas le même id
         returnedEcritureComptable.setReference(vEcritureComptable.getReference());
 
         when(comptabiliteDao.getEcritureComptableByRef(vEcritureComptable.getReference()))
@@ -293,6 +293,4 @@ public class ComptabiliteManagerImplTest {
     public void clearEcritureComptable() {
         vEcritureComptable = null;
     }
-
-
 }
